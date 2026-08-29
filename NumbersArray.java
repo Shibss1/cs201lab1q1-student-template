@@ -21,15 +21,15 @@ public class NumbersArray {
 
     // Write your methods here
     public static int findMax(Integer[] input) {
-        int biggest = 0;
+        int max = 0;
 
         for (int i = 0; i < input.length; i++) {
-            if (input[i] > biggest) {
-                biggest = input[i];
+            if (input[i] > max) {
+                max = input[i];
             }
         }
 
-        return biggest;
+        return max;
     }
 
     public static int[] findDuplicates(Integer[] input) {
