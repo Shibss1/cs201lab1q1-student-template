@@ -32,7 +32,7 @@ public class NumbersArray {
         return biggest;
     }
 
-    public static int[] findDuplicates(Integer[] input) {
+    public static Integer[] findDuplicates(Integer[] input) {
         Set<Integer> seen = new HashSet<>();
         ArrayList<Integer> dupes = new ArrayList<>();
 
@@ -42,7 +42,7 @@ public class NumbersArray {
             }
         }
 
-        return dupes.stream().mapToInt(Integer::valueOf).toArray();
+        return dupes.toArray(new Integer[dupes.size()]);
     }
 
     public static int[] findUnique(Integer[] input) {
