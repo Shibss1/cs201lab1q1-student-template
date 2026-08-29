@@ -57,7 +57,6 @@ public class NumbersArray {
             }
         }
 
-
         List<Integer> unique = new ArrayList<>();
         for (int key : count.keySet()) {
             int num = count.get(key);
