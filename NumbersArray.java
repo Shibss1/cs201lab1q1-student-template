@@ -20,6 +20,53 @@ public class NumbersArray {
     }
 
     // Write your methods here
-    
+    public static int findMax(Integer[] input) {
+        int biggest = 0;
+
+        for (int i = 0; i < input.length; i++) {
+            if (input[i] > biggest) {
+                biggest = input[i];
+            }
+        }
+
+        return biggest;
+    }
+
+    public static int[] findDuplicates(Integer[] input) {
+        Set<Integer> seen = new HashSet<>();
+        ArrayList<Integer> dupes = new ArrayList<>();
+
+        for (int num : input) {
+            if (!seen.add(num)) {
+                dupes.add(num);
+            }
+        }
+
+        return dupes.stream().mapToInt(Integer::valueOf).toArray();
+    }
+
+    public static int[] findUnique(Integer[] input) {
+        Map<Integer, Integer> count = new HashMap<>();
+
+        for (int num : input) {
+            if (count.get(num) == null) {
+                count.put(num, 1);
+            } 
+            else {
+                count.put(num, count.get(num) + 1);
+            }
+        }
+
+
+        List<Integer> unique = new ArrayList<>();
+        for (int key : count.keySet()) {
+            int num = count.get(key);
+            if (num == 1) {
+                unique.add(key);
+            }
+        }
+
+        return unique.stream().mapToInt(Integer::valueOf).toArray();
+    }
 }
 
