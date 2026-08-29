@@ -45,7 +45,7 @@ public class NumbersArray {
         return dupes.toArray(new Integer[dupes.size()]);
     }
 
-    public static int[] findUnique(Integer[] input) {
+    public static Integer[] findUnique(Integer[] input) {
         Map<Integer, Integer> count = new HashMap<>();
 
         for (int num : input) {
@@ -65,6 +65,6 @@ public class NumbersArray {
             }
         }
 
-        return unique.stream().mapToInt(Integer::valueOf).toArray();
+        return unique.toArray(new Integer[unique.size()]);
     }
 }
